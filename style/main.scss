@@ -12,12 +12,63 @@ body {
     display: flex;
     justify-content: space-between;
     nav {
-        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 50%;
+        z-index: 2;
+        background: #fff;
+        height: 100vh;
+        text-transform: uppercase;
+        transform: scaleX(0);
+        transition: .2s linear;
+        ul{
+            list-style: none;
+            padding: 0;
+            margin-top: 8em;
+            a{
+                text-decoration: none;
+                color: Black;
+                padding: 0.75em 2em;
+                display: block; 
+                &:hover {
+                    color: white;
+                    background: rgb(241, 47, 47);
+                }
+                                 
+            }
+        }
+        
+        .close-menu {
+            float: right;
+            margin-right: 2em;
+            margin-top: 1.5em;
+            width: 2.5em ;
+            path {
+                fill: rgb(241, 47, 47);
+            }
+        }
+    }
+    //tratando o  menu mobile 
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        //display: none;
+        //opacity: 0;
+        &:checked ~ .menu {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+        &:checked ~label:berofe {
+            content: '\f00d';
+        }
     }
     svg {
         cursor: pointer;
         width: 2em;
     }
+    
 }
 
 .logo {
@@ -67,4 +118,6 @@ body {
         }
     }
 }
+
+
 

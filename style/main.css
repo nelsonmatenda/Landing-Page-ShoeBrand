@@ -21,7 +21,63 @@ body {
 }
 
 .header nav {
-  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50%;
+  z-index: 2;
+  background: #fff;
+  height: 100vh;
+  text-transform: uppercase;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 8em;
+}
+
+.header nav ul a {
+  text-decoration: none;
+  color: Black;
+  padding: 0.75em 2em;
+  display: block;
+}
+
+.header nav ul a:hover {
+  color: white;
+  background: #f12f2f;
+}
+
+.header nav .close-menu {
+  float: right;
+  margin-right: 2em;
+  margin-top: 1.5em;
+  width: 2.5em;
+}
+
+.header nav .close-menu path {
+  fill: #f12f2f;
+}
+
+.header input {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header input:checked ~ .menu {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+}
+
+.header input:checked ~ label:berofe {
+  content: '\f00d';
 }
 
 .header svg {
