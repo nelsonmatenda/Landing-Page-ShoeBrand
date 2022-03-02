@@ -29,10 +29,10 @@ body {
   background: #fff;
   height: 100vh;
   text-transform: uppercase;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
 }
 
 .header nav ul {
@@ -68,11 +68,13 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
+  opacity: 0;
 }
 
-.header input:checked ~ .menu {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+.header input:checked ~ nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
   opacity: 1;
 }
 

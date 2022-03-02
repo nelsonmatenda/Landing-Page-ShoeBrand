@@ -20,8 +20,8 @@ body {
         background: #fff;
         height: 100vh;
         text-transform: uppercase;
-        transform: scaleX(0);
-        transition: .2s linear;
+        transform: translateX(100%);
+        transition: .2s ease;
         ul{
             list-style: none;
             padding: 0;
@@ -54,16 +54,18 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        //display: none;
-        //opacity: 0;
-        &:checked ~ .menu {
-            transform: scaleX(1);
+        display: none;
+        opacity: 0;
+        &:checked ~ nav {
+            transform: translateX(0);
             opacity: 1;
         }
-        &:checked ~label:berofe {
+        &:checked ~ label:berofe {
             content: '\f00d';
         }
+        
     }
+    
     svg {
         cursor: pointer;
         width: 2em;
