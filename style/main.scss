@@ -87,38 +87,74 @@ body {
         
     }
 }
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(../images/shoes-hero.jpg);
-    background-size: cover;
-    background-position: 20% 20%;
-    width: 100%;
-    height: 100vh;
-    z-index: -100;
-}
+
 .hero {
     color: white;
-    h1{
-        font-size: 3rem;
-        line-height: 1em;
-        margin-top: 2em;
-    }
-    p{
-        font-size: 1.3rem;
-        margin-top: 2em;
-    }
-    .down-arrow{
-        stroke: white;
+    .hero-image {
         position: absolute;
-        bottom: 2em;
-        width: 1em;
-
-        path{
-            fill: white;
+        top: 0;
+        left: 0;
+        background: url(../images/shoes-hero.jpg);
+        background-size: cover;
+        background-position: 20% 20%;
+        width: 100%;
+        height: 100vh;
+        z-index: -100;
+        animation: introLoad 2s forwards;
+        @keyframes introLoad {
+            from{
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            to{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
         }
     }
+    .descrition-hero{
+        height: 80vh;
+        
+        animation: moveDown 1s ease-in-out forwards;
+        opacity: 0;
+        @keyframes moveDown {
+            from{
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h1{
+            
+            font-size: 3rem;
+            line-height: 1em;
+            margin-top: 1em;
+        }
+        p{
+            font-size: 1.3rem;
+            margin-top: .6em;
+        }
+        .down-arrow{
+            stroke: white;
+            position: absolute;
+            bottom: 0;
+            width: 1em;
+            animation: moveArrow 1s alternate-reverse infinite;
+            @keyframes moveArrow {
+                from{
+                    transform: translateY(-30px);
+                }
+                to{
+                    transform: translateY(0);
+                }
+            }
+            path{
+                fill: white;
+            }
+            
+        }
+    }
+    
 }
 /*Media queries*/
 @media (min-width: 42.5em) {
@@ -147,6 +183,7 @@ body {
             height: auto;
             width: auto;
             background: none;
+           
             ul {
                 display: flex;
                 margin: 0;
@@ -178,6 +215,7 @@ body {
             height: auto;
             width: 40%; 
             color: black;
+            
             .down-arrow{
                 stroke: black;
                 position: unset;
@@ -195,7 +233,13 @@ body {
         width: 1200px;
         margin: 0 auto;
     }
+    .hero{
+        .descrition-hero{
+            h1{
+             font-size: 4.5rem;
+            }
+        }
+    }
 }
-
 
 

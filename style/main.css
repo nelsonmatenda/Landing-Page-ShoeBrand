@@ -102,7 +102,11 @@ body {
   font-weight: 700;
 }
 
-.hero-image {
+.hero {
+  color: white;
+}
+
+.hero .hero-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,31 +116,105 @@ body {
   width: 100%;
   height: 100vh;
   z-index: -100;
+  -webkit-animation: introLoad 2s forwards;
+          animation: introLoad 2s forwards;
 }
 
-.hero {
-  color: white;
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
-.hero h1 {
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.hero .descrition-hero {
+  height: 80vh;
+  -webkit-animation: moveDown 1s ease-in-out forwards;
+          animation: moveDown 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero .descrition-hero h1 {
   font-size: 3rem;
   line-height: 1em;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
-.hero p {
+.hero .descrition-hero p {
   font-size: 1.3rem;
-  margin-top: 2em;
+  margin-top: .6em;
 }
 
-.hero .down-arrow {
+.hero .descrition-hero .down-arrow {
   stroke: white;
   position: absolute;
-  bottom: 2em;
+  bottom: 0;
   width: 1em;
+  animation: moveArrow 1s alternate-reverse infinite;
 }
 
-.hero .down-arrow path {
+@-webkit-keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.hero .descrition-hero .down-arrow path {
   fill: white;
 }
 
@@ -210,6 +288,9 @@ body {
   .container {
     width: 1200px;
     margin: 0 auto;
+  }
+  .hero .descrition-hero h1 {
+    font-size: 4.5rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
