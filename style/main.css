@@ -9,6 +9,43 @@ body {
   margin: 1.5em;
   font-family: 'Poppins', sans-serif;
   text-transform: capitalize;
+  line-height: 1.6;
+}
+
+.spacePadding {
+  padding: 7em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125em;
+  color: var(--clr-text, #fff);
+  text-transform: uppercase;
+  padding: .5em 1.25em;
+  background: var(--clr-accent, blue);
+  border: .25em;
+  -webkit-transition: opacity 250ms linear, -webkit-transform 250ms ease-in;
+  transition: opacity 250ms linear, -webkit-transform 250ms ease-in;
+  transition: transform 250ms ease-in, opacity 250ms linear;
+  transition: transform 250ms ease-in, opacity 250ms linear, -webkit-transform 250ms ease-in;
+}
+
+.btn:hover, .btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: .9;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
 }
 
 .header {
@@ -43,7 +80,7 @@ body {
 
 .header nav ul a {
   text-decoration: none;
-  color: Black;
+  color: #17353d;
   padding: 0.75em 2em;
   display: block;
 }
@@ -98,8 +135,9 @@ body {
 }
 
 .logo a span {
-  color: #e7e434;
+  color: #17353d;
   font-weight: 700;
+  text-shadow: 0 0 0.2em rgba(255, 255, 255, 0.4);
 }
 
 .hero {
@@ -143,7 +181,7 @@ body {
 }
 
 .hero .descrition-hero {
-  height: 80vh;
+  height: 90vh;
   -webkit-animation: moveDown 1s ease-in-out forwards;
           animation: moveDown 1s ease-in-out forwards;
   opacity: 0;
@@ -187,7 +225,7 @@ body {
 .hero .descrition-hero .down-arrow {
   stroke: white;
   position: absolute;
-  bottom: 0;
+  bottom: 2em;
   width: 1em;
   animation: moveArrow 1s alternate-reverse infinite;
 }
@@ -218,6 +256,151 @@ body {
   fill: white;
 }
 
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw+1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 1.5em;
+}
+
+.split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.split > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 11em;
+}
+
+.featured {
+  background: #eee;
+}
+
+.featured__item {
+  display: block;
+  position: relative;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.featured__item .featured__detail {
+  opacity: 0;
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+.featured__item .featured__detail span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.featured__item .detailcorection {
+  margin-top: 1.2em;
+}
+
+.featured__item:hover, .featured__item:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.featured__item:hover .featured__detail, .featured__item:focus .featured__detail {
+  opacity: 1;
+  text-shadow: 0 0 2em white;
+}
+
+.featured__item::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  padding: 75% 75% 0 0;
+  background: #2193b0;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.product {
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+  padding: 3em;
+  margin-bottom: 5em;
+  border-radius: 1em;
+  text-align: center;
+}
+
+.product__title {
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+}
+
+.product__img {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+    margin-bottom: 15em;
+    padding: 4em 3em;
+  }
+  .product__title {
+    margin: 0;
+  }
+  .product__img {
+    float: right;
+    width: 50%;
+    shape-outside: url(../images/shoe-product-1.png);
+    shape-margin: 1em;
+    margin: 0 -5em 0 0;
+  }
+  .product.shoe-left {
+    text-align: right;
+  }
+  .product.shoe-left .product__img {
+    float: left;
+    shape-outside: url(../images/shoe-product-2.png);
+    shape-margin: 1em;
+    margin: 0 0 0 -5em;
+  }
+}
+
+.shoeColor1 {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoeColor2 {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoeColor3 {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+
 /*Media queries*/
 @media (min-width: 42.5em) {
   body {
@@ -228,7 +411,7 @@ body {
 
 @media (min-width: 57.5em) {
   .logo a {
-    color: black;
+    color: #17353d;
   }
   .logo a span {
     color: red;
@@ -270,17 +453,17 @@ body {
     height: 42em;
   }
   .hero .descrition-hero {
-    height: auto;
+    height: 42em;
     width: 40%;
-    color: black;
+    color: #17353d;
   }
   .hero .descrition-hero .down-arrow {
-    stroke: black;
+    stroke: #17353d;
     position: unset;
     margin-top: 3.4em;
   }
   .hero .descrition-hero .down-arrow path {
-    fill: black;
+    fill: #17353d;
   }
 }
 
