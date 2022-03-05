@@ -126,7 +126,7 @@ body {
 
 .hero p {
   font-size: 1.3rem;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .hero .down-arrow {
@@ -138,5 +138,78 @@ body {
 
 .hero .down-arrow path {
   fill: white;
+}
+
+/*Media queries*/
+@media (min-width: 42.5em) {
+  body {
+    margin: 1.5em 5em;
+    font-family: 'Ponppins', sans-serif;
+  }
+}
+
+@media (min-width: 57.5em) {
+  .logo a {
+    color: black;
+  }
+  .logo a span {
+    color: red;
+  }
+  .header .icon-svg-menu {
+    display: none;
+  }
+  .header nav {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    position: unset;
+    display: block;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+  .header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  .header nav ul a {
+    color: white;
+    font-size: 0.9rem;
+    padding: .6em 1.5em;
+  }
+  .header nav ul a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+  .header nav svg {
+    display: none;
+  }
+  .hero .hero-image {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 42em;
+  }
+  .hero .descrition-hero {
+    height: auto;
+    width: 40%;
+    color: black;
+  }
+  .hero .descrition-hero .down-arrow {
+    stroke: black;
+    position: unset;
+    margin-top: 3.4em;
+  }
+  .hero .descrition-hero .down-arrow path {
+    fill: black;
+  }
+}
+
+@media (min-width: 75em) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -107,7 +107,7 @@ body {
     }
     p{
         font-size: 1.3rem;
-        margin-top: 1em;
+        margin-top: 2em;
     }
     .down-arrow{
         stroke: white;
@@ -118,6 +118,82 @@ body {
         path{
             fill: white;
         }
+    }
+}
+/*Media queries*/
+@media (min-width: 42.5em) {
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Ponppins', sans-serif;
+    }
+}
+@media (min-width: 57.5em) {
+    .logo{
+        a{
+            color: black;
+            span{
+                color: red;
+            }
+        }
+    }
+    .header{  
+        .icon-svg-menu{
+            display: none;
+        }
+        nav {
+            transform: translateX(0);
+            position: unset;
+            display: block;
+            height: auto;
+            width: auto;
+            background: none;
+            ul {
+                display: flex;
+                margin: 0;
+                a{
+                    color: white;
+                    font-size: 0.9rem;
+                    padding: .6em 1.5em;
+                    &:hover {
+                        background: none;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            svg {
+                display: none;
+            }
+        }    
+    }
+    .hero{
+        
+        
+        .hero-image{
+            left: unset;
+            right: 0;
+            width: 50%;
+            height: 42em;
+        }
+        .descrition-hero{
+            height: auto;
+            width: 40%; 
+            color: black;
+            .down-arrow{
+                stroke: black;
+                position: unset;
+                margin-top: 3.4em;
+                path{
+                    fill: black;
+                }
+            }    
+        }    
+    }
+
+}
+@media (min-width: 75em){
+    .container{
+        width: 1200px;
+        margin: 0 auto;
     }
 }
 
